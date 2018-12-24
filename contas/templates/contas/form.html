@@ -8,13 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-    {% for transacao in transacoes %}
-        <li>{{transacao.descricao}} - {{transacao.data}} - {{transacao.valor}} -
-        {{transacao.categoria}}</li>
-    {% endfor %}
-    </ul>
 
-    <a href="{% url 'url_nova' %}">Novo</a>
+<form method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <input type="submit" name="botao" class="botao" value="Confirma" />
+</form>
+
 </body>
 </html>
